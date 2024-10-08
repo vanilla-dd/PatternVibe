@@ -37,6 +37,17 @@ const MobileNav = () => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+  useEffect(() => {
     if (isDesktop && open) {
       setOpen(false);
     }
@@ -45,9 +56,7 @@ const MobileNav = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="hover:bg-black/5">
-          <Menu />
-        </Button>
+        <Menu className="h-6 w-6" />
       </SheetTrigger>
       <SheetContent
         className={cn(
@@ -58,13 +67,11 @@ const MobileNav = () => {
         <SheetHeader>
           <SheetTitle>
             <div className="flex w-full items-center justify-between">
-              <p className="pt-px font-champ text-xl font-extrabold sm:text-2xl">
-                PatternVibe
+              <p className="font-champ text-xl font-extrabold sm:text-2xl">
+                PatternVibe.
               </p>
               <SheetClose asChild>
-                <Button variant={"ghost"}>
-                  <X />
-                </Button>
+                <X className="h-6 w-6" />
               </SheetClose>
             </div>
           </SheetTitle>
