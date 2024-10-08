@@ -77,3 +77,33 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes openNav {
+  0% {
+    -webkit-clip-path: circle(0% at 100% 0);
+    clip-path: circle(0% at 100% 0);
+  }
+  100% {
+    -webkit-clip-path: circle(150% at 100% 0);
+    clip-path: circle(150% at 100% 0);
+  }
+}
+
+@keyframes closeNav {
+  0% {
+    -webkit-clip-path: circle(150% at 100% 0);
+    clip-path: circle(150% at 100% 0);
+  }
+  100% {
+    -webkit-clip-path: circle(0% at 100% 0);
+    clip-path: circle(0% at 100% 0);
+  }
+}
+
+.animate-openNav {
+  animation: openNav 0.5s ease-in-out forwards;
+}
+
+.animate-closeNav {
+  animation: closeNav 0.5s ease-in-out forwards;
+}
