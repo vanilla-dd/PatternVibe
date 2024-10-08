@@ -5,7 +5,7 @@ import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 flex h-full items-center justify-between bg-[#fbefaf] px-2 py-2 transition-colors sm:px-4 lg:py-4">
+    <nav className="sticky top-0 z-10 flex h-full items-center justify-between bg-[#fbefaf] px-2 py-2 transition-colors sm:px-4 lg:py-4">
       <p className="font-champ text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl">
         PatternVibe.
       </p>

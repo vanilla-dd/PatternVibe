@@ -66,7 +66,7 @@ const MobileNav = () => {
       >
         <SheetHeader>
           <SheetTitle>
-            <div className="flex w-full items-center justify-between">
+            <div className="flex h-full w-full items-center justify-between bg-white px-2 py-2 sm:px-4">
               <p className="font-champ text-xl font-extrabold sm:text-2xl">
                 PatternVibe.
               </p>

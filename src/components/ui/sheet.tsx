@@ -56,9 +56,7 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <main className="container mx-auto bg-transparent px-2 py-2 sm:px-4">
-        {children}
-      </main>
+      <main className="container mx-auto bg-transparent">{children}</main>
     </SheetPrimitive.Content>
   </SheetPortal>
 ));
