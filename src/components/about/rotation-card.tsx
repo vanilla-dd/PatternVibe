@@ -22,7 +22,7 @@ const features = [
     number: "01",
     title: "Design with Ease",
     description:
-      "Easily craft custom garments using our 3D design tools, no prior experience needed.",
+      "Easily craft custom garments using our easy-to-use design tools, no prior experience needed.",
     rotationClasses:
       "rotate-[2.5deg] md:-rotate-[9deg] md:translate-y-[67px] lg:translate-y-[88px] md:z-[3]",
   },
@@ -65,8 +65,8 @@ const FeatureCard = ({
 }) => (
   <div className={`max-w-72 ${rotationClasses}`}>
     <ZigzagPattern />
-    <div className="grid min-h-[429px] grid-rows-3 gap-4 bg-white p-5 text-center font-dmMono">
-      <div>
+    <div className="grid min-h-[429px] grid-rows-3 gap-4 bg-white p-5 text-center font-dmMono shadow-lg">
+      <div className="self-center">
         <p className="text-xs text-gray-500 sm:text-sm md:text-base">
           {number}
         </p>
