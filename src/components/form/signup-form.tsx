@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signupSchema } from "@/lib/helpers/validators";
-// import { signupAction } from "@/app/(auth)/auth.actions";
 
 export function SignupForm() {
   const form = useForm<z.infer<typeof signupSchema>>({
