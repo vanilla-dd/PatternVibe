@@ -13,21 +13,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signinSchema } from "@/lib/helpers/validators";
-import { signinAction } from "@/app/(auth)/auth.actions";
+import { loginSchema } from "@/lib/helpers/validators";
+import { loginAction } from "@/app/(auth)/auth.actions";
 
-export function SigninForm() {
-  const form = useForm<z.infer<typeof signinSchema>>({
-    resolver: zodResolver(signinSchema),
+export function LoginForm() {
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  async function onSubmit(data: z.infer<typeof signinSchema>) {
+  async function onSubmit(data: z.infer<typeof loginSchema>) {
     console.log(data);
-    const res = await signinAction(data);
+    const res = await loginAction(data);
     console.log(res);
   }
 

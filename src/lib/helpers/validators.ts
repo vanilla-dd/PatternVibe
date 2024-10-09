@@ -11,7 +11,7 @@ export const signupSchema = z.object({
     .min(6, { message: "Should least be 6 characters long" }),
 });
 
-export const signinSchema = z.object({
+export const loginSchema = z.object({
   email: z.string().email({ message: "Enter a valid email" }),
   password: z
     .string({ required_error: "Password can't be empty" })
@@ -19,4 +19,4 @@ export const signinSchema = z.object({
 });
 
 export type SignupSchema = z.infer<typeof signupSchema>;
-export type SigninSchema = z.infer<typeof signinSchema>;
+export type LoginSchema = z.infer<typeof loginSchema>;

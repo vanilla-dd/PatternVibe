@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ReactLenis } from "@/hooks/lenis";
 import "./globals.css";
 
 const ChampBlack = localFont({
@@ -59,12 +60,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${ChampBlack.variable} ${DMSans.variable} ${DMMono.variable} font-dmSans antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ReactLenis root>
+      <html lang="en">
+        <body
+          className={`${ChampBlack.variable} ${DMSans.variable} ${DMMono.variable} font-dmSans antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ReactLenis>
   );
 }

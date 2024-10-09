@@ -9,7 +9,7 @@ export default function ScrollBackground({
 }: {
   children: React.ReactNode;
 }) {
-  const threshold = 100;
+  const threshold = 800;
   useEffect(() => {
     if (typeof window === "undefined") return;
 
