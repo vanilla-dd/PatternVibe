@@ -12,10 +12,10 @@ async function page() {
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-80 flex-col items-center justify-center gap-4 bg-basebginvert px-2 font-dmSans">
+    <div className="mx-auto flex min-h-dvh max-w-96 flex-col items-center justify-center gap-4 bg-basebginvert px-2 font-dmSans">
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="font-champ text-4xl font-extrabold md:text-5xl lg:text-6xl">
-          PatternVibes.
+          PatternVibe.
         </h1>
         <p className="max-w-[30ch] text-center font-dmMono text-base sm:text-lg md:text-xl">
           Start designing right now
