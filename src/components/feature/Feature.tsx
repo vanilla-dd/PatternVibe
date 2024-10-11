@@ -1,7 +1,7 @@
 import React from "react";
 import RotationCard from "./rotation-card";
 
-const About = () => {
+const Feature = () => {
   return (
     <div className="px-6">
       <p className="pb-16 text-center font-champ text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl">
@@ -16,4 +16,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Feature;
