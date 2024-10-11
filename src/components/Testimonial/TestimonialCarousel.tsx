@@ -20,7 +20,7 @@ const TestimonialCarousel = () => {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-7xl"
+      className="w-full max-w-xs overflow-clip sm:max-w-lg md:max-w-2xl lg:max-w-7xl"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
       opts={{ loop: true }}

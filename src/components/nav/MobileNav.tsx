@@ -19,7 +19,7 @@ import MobileSeprator from "./mobile-seprator";
 
 const links = {
   auth: [
-    { title: "Log in", url: "/signup" },
+    { title: "Log in", url: "/login" },
     { title: "Request a demo", url: "/demo" },
   ],
   main: [

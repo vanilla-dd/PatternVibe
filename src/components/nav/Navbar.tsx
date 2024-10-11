@@ -18,7 +18,7 @@ const Navbar = () => {
           <a href="/price">Pricing</a>
         </Button>
         <Button variant={"link"} asChild>
-          <a href="/signup">Log in</a>
+          <a href="/login">Log in</a>
         </Button>
         <MagneticButton distance={0.5}>
           <Button asChild>

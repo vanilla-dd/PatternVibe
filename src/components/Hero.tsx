@@ -29,6 +29,9 @@ const Hero = () => {
           Start Now
         </Button>
       </div>
+      <div className="aspect-video w-full max-w-6xl bg-red-900 text-white">
+        Demo video showcasing top features and ease of use.
+      </div>
     </div>
   );
 };
