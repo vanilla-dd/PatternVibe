@@ -14,7 +14,7 @@ const JoinUs = () => {
             <span className="text-2xl md:text-8xl">s</span>
           </span>
           <span className="block font-dmMono text-lg md:text-2xl">
-            Designs Created Daily
+            Designs Created
           </span>
         </div>
 
