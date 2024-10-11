@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import JoinUs from "@/components/JoinUs";
 import Navbar from "@/components/nav/Navbar";
+import Testimonial from "@/components/Testimonial/Testimonials";
 import ScrollBackground from "@/hooks/bg-scroll-change";
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
           <Feature />
           <div className="mt-16" />
           <JoinUs />
+          <div className="mt-16" />
+          <Testimonial />
           <div className="mt-16" />
         </div>
         <Footer />

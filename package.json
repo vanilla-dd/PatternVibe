@@ -25,6 +25,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.34.1",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.11.1",
     "lenis": "^1.1.13",
     "lucia": "^3.2.1",
