@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { signupSchema } from "@/lib/helpers/validators";
+import { signupAction } from "@/app/(auth)/auth.actions";
 
 export function SignupForm() {
   const form = useForm<z.infer<typeof signupSchema>>({
@@ -27,8 +28,8 @@ export function SignupForm() {
 
   async function onSubmit(data: z.infer<typeof signupSchema>) {
     console.log(data);
-    // const res = await signupAction(data);
-    // console.log(res);
+    const res = await signupAction(data);
+    console.log(res);
   }
 
   return (

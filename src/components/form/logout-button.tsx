@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
 import { logout } from "@/app/(auth)/auth.actions";
 import { DropdownMenuItem } from "../ui/dropdown-menu";
+import { forwardRef } from "react";
 
-function Logout() {
+const Logout = forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(() => {
   return (
     <DropdownMenuItem
       className="hover:cursor-pointer"
@@ -15,6 +18,9 @@ function Logout() {
       Logout
     </DropdownMenuItem>
   );
-}
+});
+
+// Add the display name for debugging
+Logout.displayName = "Logout";
 
 export default Logout;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const footerSections = {
   explore: {
@@ -48,7 +49,7 @@ const Footer = () => {
           <div className="flex flex-col items-start font-dmMono text-sm sm:text-base">
             {section.links.map((link, index) => (
               <Button key={index} variant="link" asChild>
-                <a href={link.href}>{link.name}</a>
+                <Link href={link.href}>{link.name}</Link>
               </Button>
             ))}
           </div>

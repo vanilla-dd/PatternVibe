@@ -16,6 +16,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import MobileSeprator from "./mobile-seprator";
+import Link from "next/link";
 
 const links = {
   auth: [
@@ -87,7 +88,7 @@ const MobileNav = () => {
                         asChild
                         key={link.title}
                       >
-                        <a href={link.url}>{link.title}</a>
+                        <Link href={link.url}>{link.title}</Link>
                       </Button>
                     ))}
                   </div>

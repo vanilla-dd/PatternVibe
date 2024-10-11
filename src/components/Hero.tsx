@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "./ui/button";
+import { validateRequest } from "@/lib/helpers/validate-request";
 
-const Hero = () => {
+const Hero = async () => {
+  const { user } = await validateRequest();
   return (
     <div className="flex flex-col items-center gap-12 overflow-hidden px-3 py-20">
       {/* <div className="relative">
@@ -26,7 +28,7 @@ const Hero = () => {
       </div>
       <div>
         <Button className="bg-yellow-400 p-8 font-dmSans text-xl font-bold text-black">
-          Start Now
+          {user ? "Design now" : "Start Now"}
         </Button>
       </div>
       <div className="aspect-video w-full max-w-6xl bg-red-900 text-white">
