@@ -12,6 +12,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const testimonials = [
+  {
+    from: "Robert Peterson, CEO XYZ",
+    description:
+      "So easy to use! Honestly, it’s changed the way we do business.",
+  },
+  { from: "", description: "" },
+  { from: "", description: "" },
+  { from: "", description: "" },
+  { from: "", description: "" },
+];
+
 const TestimonialCarousel = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
@@ -20,21 +32,23 @@ const TestimonialCarousel = () => {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full max-w-xs overflow-clip sm:max-w-lg md:max-w-2xl lg:max-w-7xl"
+      className="w-full max-w-xs overflow-hidden sm:max-w-lg sm:overflow-visible md:max-w-2xl lg:max-w-7xl"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
       opts={{ loop: true }}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem
-            key={index}
-            className="sm:basis-1/2 md:basis-2/5 lg:basis-1/3"
-          >
+        {testimonials.map((testimonial, index) => (
+          <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                <CardContent className="flex aspect-square flex-col items-center justify-center gap-8 p-6">
+                  <span className="font-dmSans text-4xl font-semibold">
+                    “{testimonial.description}”
+                  </span>
+                  <span className="self-end font-semibold">
+                    - {testimonial.from}
+                  </span>
                 </CardContent>
               </Card>
             </div>

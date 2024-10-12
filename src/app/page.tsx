@@ -13,13 +13,15 @@ export default function Home() {
         <div className="container mx-auto">
           <Navbar />
           <Hero />
-          <div className="mt-16" />
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-16" />
           <Feature />
-          <div className="mt-16" />
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-16" />
           <JoinUs />
-          <div className="mt-16" />
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-16" />
           <Testimonial />
-          <div className="mt-16" />
+          {/* <div className="lg:mt-16 md:mt-8 mt-4 sm:mt-6 " />
+          <Faq /> */}
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-16" />
         </div>
         <Footer />
       </main>

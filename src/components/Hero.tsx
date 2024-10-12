@@ -27,11 +27,11 @@ const Hero = async () => {
         </p>
       </div>
       <div>
-        <Button className="bg-yellow-400 p-8 font-dmSans text-xl font-bold text-black">
+        <Button className="bg-yellow-400 font-dmSans font-bold text-black sm:text-base md:p-4 md:text-lg lg:p-8 lg:text-xl">
           {user ? "Design now" : "Start Now"}
         </Button>
       </div>
-      <div className="aspect-video w-full max-w-6xl bg-red-900 text-white">
+      <div className="aspect-video w-full max-w-6xl bg-white">
         Demo video showcasing top features and ease of use.
       </div>
     </div>

@@ -12,7 +12,7 @@ async function page() {
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-96 flex-col items-center justify-center gap-4 bg-basebginvert px-2 font-dmSans">
+    <div className="mx-auto flex min-h-dvh max-w-96 flex-col items-center justify-center gap-4 bg-basebginvert px-4 font-dmSans">
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="font-champ text-4xl font-extrabold md:text-5xl lg:text-6xl">
           PatternVibe.
