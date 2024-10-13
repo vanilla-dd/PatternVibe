@@ -9,7 +9,7 @@ import Link from "next/link";
 const Navbar = async () => {
   const { user } = await validateRequest();
   return (
-    <nav className="sticky top-0 z-10 flex h-full items-center justify-between bg-currentbg px-4 py-2 transition-colors duration-700 lg:py-4">
+    <nav className="sticky top-0 z-10 flex h-full items-center justify-between bg-currentbg px-4 py-3 transition-colors duration-700 lg:py-4">
       <p className="font-champ text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl">
         PatternVibe.
       </p>
@@ -23,7 +23,7 @@ const Navbar = async () => {
           <div className="hidden items-center gap-2 md:flex">
             <Button variant={"ghost"}>Resources</Button>
             <Button variant={"link"} asChild>
-              <Link href="/price">Pricing</Link>
+              <Link href="/pricing">Pricing</Link>
             </Button>
             <Button variant={"link"} asChild>
               <Link href="/login">Log in</Link>

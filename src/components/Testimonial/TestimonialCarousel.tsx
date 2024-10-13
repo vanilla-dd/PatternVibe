@@ -43,10 +43,10 @@ const TestimonialCarousel = () => {
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square flex-col items-center justify-center gap-8 p-6">
-                  <span className="font-dmSans text-4xl font-semibold">
+                  <span className="font-dmSans text-2xl font-semibold md:text-3xl lg:text-4xl">
                     “{testimonial.description}”
                   </span>
-                  <span className="self-end font-semibold">
+                  <span className="self-end text-xs font-semibold md:text-sm lg:text-base">
                     - {testimonial.from}
                   </span>
                 </CardContent>
