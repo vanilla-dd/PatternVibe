@@ -14,7 +14,7 @@ const Navbar = async () => {
         PatternVibe.
       </p>
       {user ? (
-        <ProfileDropdown username={user.username} email={user.email} />
+        <ProfileDropdown />
       ) : (
         <>
           <div className="md:hidden">

@@ -1,20 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@/hooks/use-media-query";
 import MobileSeprator from "./mobile-seprator";
 import Link from "next/link";
 
@@ -34,10 +22,10 @@ const links = {
 };
 
 const MobileNav = () => {
-  const [open, setOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const [open, setOpen] = React.useState(false);
+  const [firstInteraction, setFirstInteraction] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
     } else {
@@ -48,59 +36,66 @@ const MobileNav = () => {
       document.body.style.overflow = "auto";
     };
   }, [open]);
-  useEffect(() => {
-    if (isDesktop && open) {
-      setOpen(false);
-    }
-  }, [isDesktop, open]);
+
+  const handleToggle = () => {
+    setFirstInteraction(true);
+    setOpen((prev) => !prev);
+  };
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <Menu className="h-6 w-6" />
-      </SheetTrigger>
-      <SheetContent
-        className={cn(
-          "h-full w-full bg-white transition-all duration-500 ease-in-out", // Add bg-white or any color
-          open ? "animate-openNav" : "animate-closeNav"
-        )}
+    <>
+      <button
+        onClick={handleToggle}
+        className="focus:outline-none"
+        aria-label="Toggle navigation"
       >
-        <SheetHeader>
-          <SheetTitle>
-            <div className="flex h-full w-full items-center justify-between bg-white px-4 py-3 lg:py-4">
-              <p className="font-champ text-xl font-extrabold sm:text-2xl">
-                PatternVibe.
-              </p>
-              <SheetClose asChild>
-                <X className="h-6 w-6" />
-              </SheetClose>
+        {<Menu className="h-6 w-6" />}
+      </button>
+
+      <div
+        className={cn(
+          "fixed inset-0 top-px z-[99] bg-white transition-all duration-500 ease-in-out",
+          firstInteraction && open
+            ? "animate-openNav"
+            : firstInteraction
+              ? "animate-closeNav"
+              : ""
+        )}
+        style={{
+          clipPath: open ? "circle(150% at 100% 0)" : "circle(0% at 100% 0)",
+        }}
+      >
+        <div className="flex items-center justify-between px-4 py-3">
+          <p className="font-champ text-xl font-extrabold">PatternVibe.</p>
+          <button
+            onClick={() => setOpen(false)}
+            className="focus:outline-none"
+            aria-label="Close navigation"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        <main className="flex flex-col gap-8 px-2 py-6">
+          {Object.entries(links).map(([key, items]) => (
+            <div key={key} className="space-y-6">
+              <div className="flex flex-col space-y-3">
+                {items.map((link) => (
+                  <Link
+                    href={link.url}
+                    key={link.title}
+                    className="self-start font-dmMono"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+              {key !== "footer" && <MobileSeprator />}
             </div>
-          </SheetTitle>
-          <SheetDescription asChild aria-describedby="description">
-            <main className="flex flex-col gap-8 py-6">
-              {Object.entries(links).map(([key, items]) => (
-                <div key={key} className="space-y-6">
-                  <div className="flex flex-col">
-                    {items.map((link) => (
-                      <Button
-                        variant={"link"}
-                        className="self-start text-base"
-                        asChild
-                        key={link.title}
-                      >
-                        <Link href={link.url}>{link.title}</Link>
-                      </Button>
-                    ))}
-                  </div>
-                  {key !== "footer" && <MobileSeprator />}{" "}
-                </div>
-              ))}
-            </main>
-          </SheetDescription>
-        </SheetHeader>
-        <SheetFooter></SheetFooter>
-      </SheetContent>
-    </Sheet>
+          ))}
+        </main>
+      </div>
+    </>
   );
 };
 
