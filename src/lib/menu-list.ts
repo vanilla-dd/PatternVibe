@@ -1,11 +1,13 @@
 import {
-  Tag,
   Users,
   Settings,
-  Bookmark,
+  Package,
   SquarePen,
   LayoutGrid,
   LucideIcon,
+  Store,
+  PackageSearch,
+  ReceiptText,
 } from "lucide-react";
 
 type Submenu = {
@@ -59,20 +61,30 @@ export function getMenuList(): Group[] {
           ],
         },
         {
-          href: "/categories",
-          label: "Categories",
-          icon: Bookmark,
+          href: "/orders",
+          label: "Orders",
+          icon: Package,
         },
         {
-          href: "/tags",
-          label: "Tags",
-          icon: Tag,
+          href: "/product",
+          label: "Product Library",
+          icon: PackageSearch,
+        },
+        {
+          href: "/store",
+          label: "Store",
+          icon: Store,
         },
       ],
     },
     {
       groupLabel: "Settings",
       menus: [
+        {
+          href: "/billing",
+          label: "Billing",
+          icon: ReceiptText,
+        },
         {
           href: "/contact",
           label: "Contact",
